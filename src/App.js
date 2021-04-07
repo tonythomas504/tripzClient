@@ -7,6 +7,8 @@ import Signup from './components/Auth/Signup';
 import Auth from './components/Auth/Auth'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home'
+import Create from './components/Create/Create'
+import Destinations from './components/Destinations/Destinations'
 
 function App() {
   const [sessionToken, setSessionToken] = useState('')
@@ -25,26 +27,34 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Auth updateToken={updateToken} />
-        </Route>
-        <Route exact path="/login">
-          <Login sessionToken={sessionToken} updateToken={updateToken} />
-        </Route>
-        <Route exact path="/signup">
-          <Signup updateToken={updateToken} />
-        </Route>
-        <Route exact path="/navbar">
-          <Navbar />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
+    <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Auth updateToken={updateToken} />
+          </Route>
+          <Route exact path="/login">
+            <Login sessionToken={sessionToken} updateToken={updateToken} />
+          </Route>
+          <Route exact path="/signup">
+            <Signup updateToken={updateToken} />
+          </Route>
+          <Route exact path="/navbar">
+            <Navbar />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/create">
+            <Create />
+          </Route>
+          <Route exact path="/destination">
+            <Destinations />
+          </Route>
 
-      </Switch>
-    </BrowserRouter>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 
